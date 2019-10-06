@@ -8,8 +8,9 @@ import java.util.ArrayList;
  */
 public class VistaImpl implements Vista{
     
-    public ArrayList <String> listaUrls = new ArrayList<>();
-    public ArrayList <String> listaArchivos = new ArrayList<>();
+    private ArrayList <String> listaUrls = new ArrayList<>();
+    private ArrayList <String> listaArchivos = new ArrayList<>();
+    private ArrayList <String> columnasCsv = new ArrayList<>();
     //Para poder ampliar este proyecto a archivos y urls q el usuario indica bastaria con un bucle que
     //pide al usuario la url y despues la ruta del nuevo archivo de forma que los ira almacenando en los array 
     //para que posteriormente el controlador los mande de golpe al modelo que se encargara de crear los archivos 
@@ -22,6 +23,16 @@ public class VistaImpl implements Vista{
         listaArchivos.add("src\\datosDescargados\\contendoresPapel.csv");
         listaArchivos.add("src\\datosDescargados\\contendoresVidrio.csv");
         listaArchivos.add("src\\datosDescargados\\contendoresEnvases.csv");
+ 
+        columnasCsv.add("CODCALLE");
+        columnasCsv.add("TEXTO");
+        columnasCsv.add("CAPACIDAD");
+        columnasCsv.add("NOTAS");
+        columnasCsv.add("UTM_X");
+        columnasCsv.add("UTM_Y");
+        columnasCsv.add("TIPO");
+        
+        
     }
 
     @Override
@@ -32,6 +43,12 @@ public class VistaImpl implements Vista{
     @Override
     public ArrayList<String> getListaArchivos() {
         return listaArchivos;
+    }
+
+
+    @Override
+    public ArrayList<String> getColumnasCsv() {
+        return columnasCsv;
     }
     
     

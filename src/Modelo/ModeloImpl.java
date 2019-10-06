@@ -34,8 +34,14 @@ public class ModeloImpl implements Modelo{
         listaFicheros= new ArrayList<>();
         conexionesUrl = new ArrayList<>();
 
-
     }
+    
+    
+    @Override
+    public void conectarUrl(String url) throws MalformedURLException, IOException{
+        conexionesUrl.add((new URL (url)).openConnection());
+    }
+    
     @Override
     public void introducirFicheroEnLista(String nombre){
         listaFicheros.add(new File(nombre));
@@ -48,12 +54,7 @@ public class ModeloImpl implements Modelo{
                 fichero.createNewFile();
     }
     
-    @Override
-    public void conectarUrl(String url) throws MalformedURLException, IOException{
-        conexionesUrl.add((new URL (url)).openConnection());
-    }
-    
-    
+      
     @Override
     public void descargarFichero(String rutaDescarga) throws IOException{
         for (int i = 0; i < listaFicheros.size(); i++) {

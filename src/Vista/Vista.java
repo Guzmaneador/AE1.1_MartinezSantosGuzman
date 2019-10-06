@@ -9,6 +9,9 @@ import java.util.ArrayList;
 public interface Vista {
     
     public ArrayList<String> getListaUrls();
+    
     public ArrayList<String> getListaArchivos();
+    
+    public ArrayList<String> getColumnasCsv();
     
 }
